@@ -1,0 +1,4 @@
+limit = request.args.get("limit", type=int)
+
+if limit:
+    filtered = filtered[:limit]
