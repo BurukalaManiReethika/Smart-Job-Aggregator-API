@@ -1,0 +1,11 @@
+location = request.args.get("location")
+
+filtered = jobs_data
+
+if skill:
+    filtered = [job for job in filtered if skill.lower() in job["skills"].lower()]
+
+if location:
+    filtered = [job for job in filtered if location.lower() in job["location"].lower()]
+
+return jsonify(filtered)
